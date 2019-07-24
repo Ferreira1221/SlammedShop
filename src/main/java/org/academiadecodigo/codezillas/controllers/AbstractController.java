@@ -9,7 +9,7 @@ public abstract class AbstractController implements Controller {
     protected View view;
 
     public void init() {
-
+        view.show();
     }
 
     public void setUserServiceInt(UserServiceInt userService) {
