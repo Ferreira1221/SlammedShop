@@ -1,4 +1,4 @@
-package org.academiadecodigo.codezillas.views.shopViews;
+package org.academiadecodigo.codezillas.views.ownerCarViews;
 
 import org.academiadecodigo.codezillas.views.AbstractView;
 

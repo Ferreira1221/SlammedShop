@@ -29,7 +29,7 @@ CREATE TABLE electronics(
   PRIMARY KEY (elec_kit_id, elec_kit_name)
 );
 INSERT INTO electronics(elec_kit_name) values ('hella');
-INSERT INTO electronics(elec_kit_name) values ('stock');
+INSERT INTO electronics(elec_kit_name) values ('stockControllers');
 
 CREATE TABLE tires(
   tire_brand_id INTEGER AUTO_INCREMENT NOT NULL UNIQUE,
@@ -101,4 +101,4 @@ INSERT INTO car_specs (car_id, car_brand,car_model, elec_kit_name, elec_kit_id,
   values (1, 'VW', 'Golf', 'hella', 1, 'nankang', 'semiSlick', 'stage 1');
 INSERT INTO car_specs (car_id, car_brand,car_model, elec_kit_name, elec_kit_id,
     tire_brand_name, tire_type, stage_name)
-  values (2, 'Peugeot', '106gti', 'stock', 2, 'bfGroodrich', 'sport', 'stage 1');
+  values (2, 'Peugeot', '106gti', 'stockControllers', 2, 'bfGroodrich', 'sport', 'stage 1');
