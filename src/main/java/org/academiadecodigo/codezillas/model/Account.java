@@ -1,5 +1,9 @@
 package org.academiadecodigo.codezillas.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Account {
 
     private Integer id;
@@ -9,6 +13,7 @@ public class Account {
     public Account() {
     }
 
+    @Id
     public Integer getId() {
         return id;
     }

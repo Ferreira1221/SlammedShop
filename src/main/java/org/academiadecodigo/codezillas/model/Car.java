@@ -1,5 +1,9 @@
 package org.academiadecodigo.codezillas.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Car {
 
     private String licensePlate;
@@ -10,6 +14,7 @@ public class Car {
     public Car() {
     }
 
+    @Id
     public String getLicensePlate() {
         return licensePlate;
     }

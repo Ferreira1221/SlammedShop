@@ -7,7 +7,6 @@ import java.util.List;
 @Entity
 public class Owner {
 
-    private List carList;
 
     private Integer id;
     private String name;
@@ -16,14 +15,6 @@ public class Owner {
     private String registerDate;
 
     public Owner() {
-    }
-
-    public List getCarList() {
-        return carList;
-    }
-
-    public void setCarList(List<Car> carList) {
-        this.carList = carList;
     }
 
     @Id

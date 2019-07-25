@@ -1,5 +1,9 @@
 package org.academiadecodigo.codezillas.model.components;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Stage {
 
     private Integer id;
@@ -8,6 +12,7 @@ public class Stage {
     public Stage() {
     }
 
+    @Id
     public Integer getId() {
         return id;
     }

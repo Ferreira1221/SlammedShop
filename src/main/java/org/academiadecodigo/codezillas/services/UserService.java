@@ -11,14 +11,14 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.sql.Connection;
+import java.util.LinkedList;
+import java.util.List;
 
 public class UserService implements UserServiceInt{
 
-    private Connection connection;
     private EntityManagerFactory emf;
 
-    public UserService (Connection connection){
-        this.connection = connection;
+    public UserService (){
     }
 
     public void setEmf(EntityManagerFactory emf) {
@@ -32,6 +32,13 @@ public class UserService implements UserServiceInt{
 
     @Override
     public void addOwner(Owner owner) {
+
+
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSERT INTO Owner").setParameter(owner.getId(), owner);
+
+        em.close();
 
     }
 
@@ -61,18 +68,40 @@ public class UserService implements UserServiceInt{
     }
 
     @Override
-    public void findByName(String ownerName) {
+    public Owner findByName(String ownerName) {
+        return null;
 
     }
 
     @Override
-    public void findByLicensePlate(String licensePlate) {
+    public Car findByLicensePlate(String licensePlate) {
+
+        EntityManager em = emf.createEntityManager();
+
+
+
+        return null;
 
     }
 
     @Override
-    public void findAll() {
+    public List findAllOwners() {
 
+        EntityManager em = emf.createEntityManager();
+
+        List<Owner> allOwners = em.createNativeQuery("SELECT * FROM Owners").getResultList();
+
+        return allOwners;
+    }
+
+    @Override
+    public List findAllCars(){
+
+        EntityManager em = emf.createEntityManager();
+
+        List<Car> allCars = em.createNativeQuery("SELECT * FROM Cars").getResultList();
+
+        return allCars;
     }
 
     @Override
@@ -80,13 +109,25 @@ public class UserService implements UserServiceInt{
 
         EntityManager em = emf.createEntityManager();
 
-        em.createNativeQuery("SELECT COUNT(*) FROM owner;").getResultList();
+        em.createNativeQuery("SELECT COUNT(*) FROM Owner;").getResultList();
 
         em.close();
 
     }
 
     @Override
+    public void countInShopCars(){
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("SELECT COUNT(*) FROM InShop ;").getResultList();
+
+        em.close();
+
+
+    }
+
+
+
 
 
 

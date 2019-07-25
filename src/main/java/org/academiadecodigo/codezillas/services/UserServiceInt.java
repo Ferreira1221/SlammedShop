@@ -7,6 +7,8 @@ import org.academiadecodigo.codezillas.model.components.Stage;
 import org.academiadecodigo.codezillas.model.components.Suspension;
 import org.academiadecodigo.codezillas.model.components.Tires;
 
+import java.util.List;
+
 public interface UserServiceInt {
 
     boolean authenticate(String username, String password);
@@ -24,14 +26,17 @@ public interface UserServiceInt {
 
     void addElectronics(Electronics electronics);
 
-    void findByName(String ownerName);
+    Owner findByName(String ownerName);
 
-    void findByLicensePlate(String licensePlate);
+    Car findByLicensePlate(String licensePlate);
 
-    void findAll();
+    List findAllOwners();
+
+    List findAllCars();
 
     void countOwners();
 
     void countInShopCars();
+
 
 }
