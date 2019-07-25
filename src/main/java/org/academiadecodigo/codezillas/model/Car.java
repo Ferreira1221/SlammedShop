@@ -7,6 +7,8 @@ public class Car {
     private String model;
     private Integer horsePower;
 
+    public Car() {
+    }
 
     public String getLicensePlate() {
         return licensePlate;
