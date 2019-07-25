@@ -1,6 +1,13 @@
 package org.academiadecodigo.codezillas.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import java.util.List;
+@Entity
 public class Owner {
+
+    private List carList;
 
     private Integer id;
     private String name;
@@ -11,6 +18,15 @@ public class Owner {
     public Owner() {
     }
 
+    public List getCarList() {
+        return carList;
+    }
+
+    public void setCarList(List<Car> carList) {
+        this.carList = carList;
+    }
+
+    @Id
     public Integer getId() {
         return id;
     }

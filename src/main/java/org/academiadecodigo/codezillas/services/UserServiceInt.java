@@ -30,6 +30,8 @@ public interface UserServiceInt {
 
     void findAll();
 
-    void count();
+    void countOwners();
+
+    void countInShopCars();
 
 }

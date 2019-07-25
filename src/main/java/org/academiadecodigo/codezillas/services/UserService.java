@@ -76,7 +76,7 @@ public class UserService implements UserServiceInt{
     }
 
     @Override
-    public void count() {
+    public void countOwners() {
 
         EntityManager em = emf.createEntityManager();
 
@@ -85,6 +85,9 @@ public class UserService implements UserServiceInt{
         em.close();
 
     }
+
+    @Override
+
 
 
 
