@@ -9,17 +9,13 @@ import org.academiadecodigo.codezillas.model.components.Tires;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.sql.Connection;
+import java.util.List;
 
 public class UserService implements UserServiceInt{
 
-    private Connection connection;
     private EntityManagerFactory emf;
 
-    public UserService (Connection connection){
-        this.connection = connection;
-    }
+    public UserService (){}
 
     public void setEmf(EntityManagerFactory emf) {
         this.emf = emf;
@@ -61,28 +57,39 @@ public class UserService implements UserServiceInt{
     }
 
     @Override
-    public void findByName(String ownerName) {
-
+    public Owner findByName(String ownerName) {
+        return null;
     }
 
     @Override
-    public void findByLicensePlate(String licensePlate) {
-
+    public Car findByLicensePlate(String licensePlate) {
+        return null;
     }
 
     @Override
-    public void findAll() {
-
+    public List<Owner> findAllOwners() {
+        return null;
     }
 
     @Override
-    public void count() {
+    public List<Car> findAllCars() {
+        return null;
+    }
+
+    @Override
+    public void countOwners() {
 
         EntityManager em = emf.createEntityManager();
 
         em.createNativeQuery("SELECT COUNT(*) FROM owner;").getResultList();
 
         em.close();
+
+    }
+
+
+    @Override
+    public void countInShopCars() {
 
     }
 

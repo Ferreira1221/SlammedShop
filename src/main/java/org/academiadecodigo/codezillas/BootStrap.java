@@ -3,7 +3,6 @@ package org.academiadecodigo.codezillas;
 import org.academiadecodigo.bootcamp.Prompt;
 import org.academiadecodigo.codezillas.controllers.LoginController;
 import org.academiadecodigo.codezillas.controllers.LoginRegisterController;
-import org.academiadecodigo.codezillas.persistence.ConnectionManager;
 import org.academiadecodigo.codezillas.services.UserService;
 import org.academiadecodigo.codezillas.views.LoginRegisterView;
 import org.academiadecodigo.codezillas.views.LoginView;
@@ -21,11 +20,12 @@ public class BootStrap {
 
     public void initBootStrap() {
 
-        //hibernate
+        // Hibernate
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("aco");
 
-        ConnectionManager connectionManager = new ConnectionManager();
-        //UserService userService = new UserService(connectionManager.getConnection); //TODO: implement connectionManager
+        // User Service
+        UserService userService = new UserService();
+        userService.setEmf(emf);
 
         // Instantiate Controller
         LoginRegisterController loginRegisterController = new LoginRegisterController();
