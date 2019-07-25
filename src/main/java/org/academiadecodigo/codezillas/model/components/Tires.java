@@ -6,7 +6,6 @@ public class Tires {
     private String brand;
     private String type;
 
-
     public Tires() {
     }
 
