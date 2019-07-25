@@ -24,12 +24,12 @@ INSERT INTO cars(car_brand, car_model, car_hp , updated_at) values ('VW', 'Golf'
 INSERT INTO cars(car_brand, car_model, car_hp , updated_at) values ('Peugeot', '106gti', 690, '2019-02-14');
 
 CREATE TABLE electronics(
-  electronics_kit_id INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
-  electronics_kit_name CHAR(20) NOT NULL UNIQUE,
-  PRIMARY KEY (electronics_kit_id, electronics_kit_name)
+  elec_kit_id INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
+  elec_kit_name CHAR(20) NOT NULL UNIQUE,
+  PRIMARY KEY (elec_kit_id, elec_kit_name)
 );
-INSERT INTO electronics(electronics_kit_name) values ('hella');
-INSERT INTO electronics(electronics_kit_name) values ('stock');
+INSERT INTO electronics(elec_kit_name) values ('hella');
+INSERT INTO electronics(elec_kit_name) values ('stock');
 
 CREATE TABLE tires(
   tire_brand_id INTEGER AUTO_INCREMENT NOT NULL UNIQUE,
@@ -41,13 +41,13 @@ INSERT INTO tires(tire_brand_name, tire_type) values ('nankang', 'semiSlick');
 INSERT INTO tires(tire_brand_name, tire_type) values ('bfGroodrich', 'sport');
 
 CREATE TABLE suspension(
-  suspension_kit_id INTEGER AUTO_INCREMENT NOT NULL UNIQUE,
-  suspension_kit_name CHAR(40) NOT NULL UNIQUE,
-  suspension_type CHAR(40) NOT NULL UNIQUE,
-  PRIMARY KEY (suspension_kit_id, suspension_kit_name , suspension_type)
+  susp_kit_id INTEGER AUTO_INCREMENT NOT NULL UNIQUE,
+  susp_kit_name CHAR(40) NOT NULL UNIQUE,
+  susp_type CHAR(40) NOT NULL UNIQUE,
+  PRIMARY KEY (susp_kit_id, susp_kit_name , susp_type)
 );
-INSERT INTO suspension(suspension_kit_name, suspension_type) values ('jom', 'static');
-INSERT INTO suspension(suspension_kit_name, suspension_type) values ('eibach', 'sport');
+INSERT INTO suspension(susp_kit_name, susp_type) values ('jom', 'static');
+INSERT INTO suspension(susp_kit_name, susp_type) values ('eibach', 'sport');
 
 CREATE TABLE motor_stages(
   stage_id INTEGER NOT NULL AUTO_INCREMENT UNIQUE,
@@ -80,25 +80,25 @@ CREATE TABLE car_specs(
   car_id INTEGER NOT NULL,
   car_brand CHAR(20) NOT NULL,
   car_model CHAR(20) NOT NULL,
-  electronics_kit_name CHAR(20) NOT NULL,
-  electronics_kit_id INTEGER NOT NULL,
+  elec_kit_name CHAR(20) NOT NULL,
+  elec_kit_id INTEGER NOT NULL,
   tire_brand_name CHAR(20) NOT NULL,
   tire_type CHAR(20) NOT NULL,
   stage_name CHAR(20) NOT NULL,
-  PRIMARY KEY (car_id,electronics_kit_id,tire_brand_name,tire_type,stage_name),
+  PRIMARY KEY (car_id,elec_kit_id,tire_brand_name,tire_type,stage_name),
   FOREIGN KEY (car_id) REFERENCES cars(car_id),
   FOREIGN KEY (car_brand) REFERENCES cars(car_brand),
   FOREIGN KEY (car_model) REFERENCES cars(car_model),
-  FOREIGN KEY (electronics_kit_name) REFERENCES electronics(electronics_kit_name),
-  FOREIGN KEY (electronics_kit_id) REFERENCES electronics(electronics_kit_id),
+  FOREIGN KEY (elec_kit_name) REFERENCES electronics(elec_kit_name),
+  FOREIGN KEY (elec_kit_id) REFERENCES electronics(elec_kit_id),
   FOREIGN KEY (tire_brand_name) REFERENCES tires(tire_brand_name),
   FOREIGN KEY (tire_type) REFERENCES tires(tire_type),
   FOREIGN KEY (stage_name) REFERENCES motor_stages(stage_name)
 );
 
-INSERT INTO car_specs (car_id, car_brand,car_model, electronics_kit_name, electronics_kit_id,
+INSERT INTO car_specs (car_id, car_brand,car_model, elec_kit_name, elec_kit_id,
   tire_brand_name, tire_type, stage_name)
   values (1, 'VW', 'Golf', 'hella', 1, 'nankang', 'semiSlick', 'stage 1');
-INSERT INTO car_specs (car_id, car_brand,car_model, electronics_kit_name, electronics_kit_id,
+INSERT INTO car_specs (car_id, car_brand,car_model, elec_kit_name, elec_kit_id,
     tire_brand_name, tire_type, stage_name)
   values (2, 'Peugeot', '106gti', 'stock', 2, 'bfGroodrich', 'sport', 'stage 1');
