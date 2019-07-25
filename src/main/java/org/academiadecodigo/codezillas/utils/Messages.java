@@ -8,6 +8,8 @@ public class Messages {
     public static String LOGIN_ERROR = "User not Found";
     public static String LOGIN_USERNAME = "Enter Username: ";
     public static String LOGIN_PASSWORD = "Enter Password: ";
+    public static String REGISTER_USERNAME = "Enter username: ";
+    public static String REGISTER_PASSWORD = "Enter password: ";
 
 
     // Menu Options
