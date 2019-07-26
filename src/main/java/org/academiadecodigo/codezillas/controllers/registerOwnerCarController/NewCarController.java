@@ -33,7 +33,10 @@ public class NewCarController extends AbstractController {
         String ownerName = registeredOwners[selectedOwner - 1];
 
         Owner owner = userService.findByName(ownerName);
-        //userService.
+
+        Integer ownerId = owner.getId();
+
+        newCar(ownerId, licensePlate, brand, model, hp);
     }
 
     public void setMainController(Controller addCarController) {
@@ -65,13 +68,13 @@ public class NewCarController extends AbstractController {
         return false;
     }
 
-    private void newCar(String licensePlate, String brand, String model, Integer hp) {
+    private void newCar(Integer ownerId, String licensePlate, String brand, String model, Integer hp) {
 
         if (licensePlateExists(licensePlate)) {
             System.out.println(Messages.LICENSE_PLATE_EXISTS);
             init();
         }
 
-        userService.addCar(registerCar(licensePlate, brand, model, hp));
+        userService.addCar(ownerId, registerCar(licensePlate, brand, model, hp));
     }
 }

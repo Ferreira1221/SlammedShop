@@ -34,11 +34,13 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
-    public void addCar(String ownerName, Car car) {
+    public void addCar(Integer ownerId, Car car) {
 
         EntityManager em = emf.createEntityManager();
 
         em.createNativeQuery("INSERT INTO CarsList").setParameter(car.getLicensePlate(), car);
+
+        //TODO: refactor query, ,missing parameter
 
         em.close();
 

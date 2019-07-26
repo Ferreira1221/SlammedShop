@@ -32,7 +32,7 @@ public class NewCarView extends AbstractView {
         intScaner.setMessage(Messages.NEW_CAR_HP);
         Integer horsepower = prompt.getUserInput(intScaner);
 
-        newCarController.newCar(licensePlate, brand, model, horsepower);
+    newCarController.addCarToOwner(selectedOwner, licensePlate, brand, model, horsepower);
     }
 
     public void setNewCarController(NewCarController newCarController) {

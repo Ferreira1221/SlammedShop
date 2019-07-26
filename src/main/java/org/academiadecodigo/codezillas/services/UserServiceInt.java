@@ -15,7 +15,7 @@ public interface UserServiceInt {
 
     void addOwner(Owner owner);
 
-    void addCar(String ownerName, Car car);
+    void addCar(Integer ownerId, Car car);
 
     void addTire(Tires tire);
 
