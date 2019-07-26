@@ -3,6 +3,7 @@ package org.academiadecodigo.codezillas.controllers.registerOwnerCarController;
 import org.academiadecodigo.codezillas.controllers.AbstractController;
 import org.academiadecodigo.codezillas.controllers.Controller;
 import org.academiadecodigo.codezillas.model.Car;
+import org.academiadecodigo.codezillas.model.Owner;
 import org.academiadecodigo.codezillas.services.UserService;
 import org.academiadecodigo.codezillas.utils.Messages;
 
@@ -10,22 +11,33 @@ import java.util.List;
 
 public class NewCarController extends AbstractController {
 
-    private Controller addCarController;
+    private Controller mainController;
     private UserService userService;
+    private String[] registeredOwners;
 
-    public void newCar(String licensePlate, String brand, String model, Integer hp) {
+    public String[] registeredOwners() {
+        List<Owner> ownerList = userService.findAllOwners();
 
-        if (licensePlateExists(licensePlate)) {
-            System.out.println(Messages.LICENSE_PLATE_EXISTS);
-            init();
+        registeredOwners = new String[ownerList.size()];
+        int index = 0;
+
+        for (Owner owner : ownerList) {
+            registeredOwners[index] = owner.getName();
+            index++;
         }
 
-        userService.addCar(registerCar(licensePlate, brand, model, hp));
-        addCarController.init();
+        return registeredOwners;
     }
 
-    public void setAddCarController(Controller addCarController) {
-        this.addCarController = addCarController;
+    public void addCarToOwner(int selectedOwner, String licensePlate, String brand, String model, Integer hp) {
+        String ownerName = registeredOwners[selectedOwner - 1];
+
+        Owner owner = userService.findByName(ownerName);
+        //userService.
+    }
+
+    public void setMainController(Controller addCarController) {
+        this.mainController = addCarController;
     }
 
     public void setUserService(UserService userService) {
@@ -51,5 +63,15 @@ public class NewCarController extends AbstractController {
             }
         }
         return false;
+    }
+
+    private void newCar(String licensePlate, String brand, String model, Integer hp) {
+
+        if (licensePlateExists(licensePlate)) {
+            System.out.println(Messages.LICENSE_PLATE_EXISTS);
+            init();
+        }
+
+        userService.addCar(registerCar(licensePlate, brand, model, hp));
     }
 }

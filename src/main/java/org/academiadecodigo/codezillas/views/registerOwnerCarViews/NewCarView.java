@@ -1,6 +1,7 @@
 package org.academiadecodigo.codezillas.views.registerOwnerCarViews;
 
 import org.academiadecodigo.bootcamp.scanners.integer.IntegerInputScanner;
+import org.academiadecodigo.bootcamp.scanners.menu.MenuInputScanner;
 import org.academiadecodigo.bootcamp.scanners.string.StringInputScanner;
 import org.academiadecodigo.codezillas.controllers.registerOwnerCarController.NewCarController;
 import org.academiadecodigo.codezillas.utils.Messages;
@@ -12,8 +13,12 @@ public class NewCarView extends AbstractView {
 
     @Override
     public void show() {
+        MenuInputScanner menuScanner = new MenuInputScanner(newCarController.registeredOwners());
         StringInputScanner scanner = new StringInputScanner();
         IntegerInputScanner intScaner = new IntegerInputScanner();
+
+        menuScanner.setMessage(Messages.SELECT_OWNER);
+        Integer selectedOwner = prompt.getUserInput(menuScanner);
 
         scanner.setMessage(Messages.NEW_CAR_LICENSE_PLATE);
         String licensePlate = prompt.getUserInput(scanner);

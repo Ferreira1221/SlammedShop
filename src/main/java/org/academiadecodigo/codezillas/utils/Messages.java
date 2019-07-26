@@ -20,6 +20,7 @@ public class Messages {
     public static String NEW_CAR_BRAND = "Insert car brand: ";
     public static String NEW_CAR_MODEL = "Insert car model: ";
     public static String NEW_CAR_HP = "Insert car horsepower: ";
+    public static String SELECT_OWNER = "Select owner: ";
 
 
     // Errors
