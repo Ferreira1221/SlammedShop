@@ -8,6 +8,7 @@ public class RegisterOwnerCarController extends AbstractController {
 
     private Controller newCarController;
     private Controller newOwnerController;
+    private Controller quitTomainMenu;
     private UserService userService;
 
     public void newRegist(int registOption) {
@@ -18,6 +19,9 @@ public class RegisterOwnerCarController extends AbstractController {
             case 2:
                 newCarController.init();
                 break;
+            case 3:
+                quitTomainMenu.init();
+                break;
         }
     }
 
@@ -27,6 +31,10 @@ public class RegisterOwnerCarController extends AbstractController {
 
     public void setNewOwnerController(Controller newOwnerController) {
         this.newOwnerController = newOwnerController;
+    }
+
+    public void setQuitTomainMenu(Controller quitTomainMenu) {
+        this.quitTomainMenu = quitTomainMenu;
     }
 
     public void setUserService(UserService userService) {
