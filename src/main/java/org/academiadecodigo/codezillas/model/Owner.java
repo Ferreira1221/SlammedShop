@@ -1,6 +1,12 @@
 package org.academiadecodigo.codezillas.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import java.util.List;
+@Entity
 public class Owner {
+
 
     private Integer id;
     private String name;
@@ -11,6 +17,7 @@ public class Owner {
     public Owner() {
     }
 
+    @Id
     public Integer getId() {
         return id;
     }

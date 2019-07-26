@@ -1,5 +1,9 @@
 package org.academiadecodigo.codezillas.model.components;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Suspension {
 
     private Integer id;
@@ -10,6 +14,7 @@ public class Suspension {
     public Suspension() {
     }
 
+    @Id
     public Integer getId() {
         return id;
     }

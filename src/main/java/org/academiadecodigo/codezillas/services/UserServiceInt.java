@@ -11,12 +11,11 @@ import java.util.List;
 
 public interface UserServiceInt {
 
-    boolean authenticate(String username, String password);
 
 
     void addOwner(Owner owner);
 
-    void addCar(Car car);
+    void addCar(String ownerName, Car car);
 
     void addTire(Tires tire);
 
@@ -30,12 +29,17 @@ public interface UserServiceInt {
 
     Car findByLicensePlate(String licensePlate);
 
-    List<Owner> findAllOwners();
+    List findAllOwners();
 
-    List<Car> findAllCars();
+    List findAllCars();
 
     void countOwners();
 
     void countInShopCars();
+
+
+
+
+
 
 }
