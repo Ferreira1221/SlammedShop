@@ -5,12 +5,13 @@ import javax.persistence.Id;
 
 @Entity
 public class CarsList {
+
+    @Id
     private Integer ownerId;
     private String carBrand;
     private String carModel;
     private String carLicensePlate;
 
-    @Id
     public Integer getOwnerId() {
         return ownerId;
     }

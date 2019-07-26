@@ -6,10 +6,9 @@ import javax.persistence.Id;
 @Entity
 public class InShop {
 
+    @Id
     private String car;
     private String owner;
-
-    @Id
 
     public String getCar() {
         return car;

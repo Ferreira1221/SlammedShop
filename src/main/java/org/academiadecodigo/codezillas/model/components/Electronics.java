@@ -6,13 +6,10 @@ import javax.persistence.Id;
 @Entity
 public class Electronics {
 
+    @Id
     private Integer id;
     private String elecsDescription;
 
-    public Electronics() {
-    }
-
-    @Id
     public Integer getId() {
         return id;
     }

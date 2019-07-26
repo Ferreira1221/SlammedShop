@@ -6,13 +6,10 @@ import javax.persistence.Id;
 @Entity
 public class Stage {
 
+    @Id
     private Integer id;
     private String stage_Type;
 
-    public Stage() {
-    }
-
-    @Id
     public Integer getId() {
         return id;
     }

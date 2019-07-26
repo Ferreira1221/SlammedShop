@@ -6,14 +6,11 @@ import javax.persistence.Id;
 @Entity
 public class Account {
 
+    @Id
     private Integer id;
     private String username;
     private String password;
 
-    public Account() {
-    }
-
-    @Id
     public Integer getId() {
         return id;
     }

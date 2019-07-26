@@ -6,10 +6,10 @@ import javax.persistence.Id;
 @Entity
 public class ClientInfo {
 
+    @Id
     private String username;
     private String password;
 
-    @Id
     public String getUsername() {
         return username;
     }

@@ -58,7 +58,6 @@ public class UserService implements UserServiceInt {
     }
 
 
-
     @Override
     public void addSuspension(Suspension suspension) {
 

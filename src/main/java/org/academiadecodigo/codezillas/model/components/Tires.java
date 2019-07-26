@@ -6,13 +6,11 @@ import javax.persistence.Id;
 @Entity
 public class Tires {
 
+    @Id
     private Integer id;
     private String brand;
     private String type;
 
-    public Tires() {
-    }
-    @Id
     public Integer getId() {
         return id;
     }

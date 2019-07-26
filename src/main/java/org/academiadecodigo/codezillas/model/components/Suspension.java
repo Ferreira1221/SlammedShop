@@ -6,15 +6,11 @@ import javax.persistence.Id;
 @Entity
 public class Suspension {
 
+    @Id
     private Integer id;
     private String brand;
     private String type;
 
-
-    public Suspension() {
-    }
-
-    @Id
     public Integer getId() {
         return id;
     }

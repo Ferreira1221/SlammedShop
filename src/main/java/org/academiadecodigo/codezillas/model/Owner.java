@@ -8,16 +8,15 @@ import java.util.List;
 public class Owner {
 
 
+    @Id
     private Integer id;
     private String name;
     private String email;
     private String phone;
     private String registerDate;
 
-    public Owner() {
-    }
 
-    @Id
+
     public Integer getId() {
         return id;
     }

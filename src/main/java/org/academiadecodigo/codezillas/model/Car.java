@@ -6,15 +6,12 @@ import javax.persistence.Id;
 @Entity
 public class Car {
 
+    @Id
     private String licensePlate;
     private String brand;
     private String model;
     private Integer horsePower;
 
-    public Car() {
-    }
-
-    @Id
     public String getLicensePlate() {
         return licensePlate;
     }
