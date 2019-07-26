@@ -9,12 +9,9 @@ import org.academiadecodigo.codezillas.model.components.Tires;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import java.sql.Connection;
-import java.util.LinkedList;
 import java.util.List;
 
-public class UserService implements UserServiceInt{
+public class UserService implements UserServiceInt {
 
     private EntityManagerFactory emf;
 
@@ -26,50 +23,83 @@ public class UserService implements UserServiceInt{
     }
 
     @Override
-    public boolean authenticate(String username, String password) {
-        return false;
-    }
-
-    @Override
     public void addOwner(Owner owner) {
-
 
         EntityManager em = emf.createEntityManager();
 
         em.createNativeQuery("INSERT INTO Owner").setParameter(owner.getId(), owner);
 
         em.close();
+        emf.close();
 
     }
 
     @Override
     public void addCar(Car car) {
 
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSERT INTO Car").setParameter(car.getLicensePlate(),car);
+
+        em.close();
+        emf.close();
+
     }
 
     @Override
     public void addTire(Tires tire) {
+
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSER INTO Tires").setParameter(tire.getId(), tire);
+
+        em.close();
+        emf.close();
 
     }
 
     @Override
     public void addSuspension(Suspension suspension) {
 
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSERT INTO Suspension").setParameter(suspension.getId(), suspension);
+
+        em.close();
+        emf.close();
+
     }
 
     @Override
     public void addStage(Stage stage) {
+
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSERT INTO Stage").setParameter(stage.getId(), stage);
+
+        em.close();
+        emf.close();
 
     }
 
     @Override
     public void addElectronics(Electronics electronics) {
 
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSERT INTO Electronics").setParameter(electronics.getId(), electronics);
+
+        em.close();
+        emf.close();
+
     }
 
     @Override
     public Owner findByName(String ownerName) {
-        return null;
+
+        EntityManager em = emf.createEntityManager();
+
+        return (Owner) em.createNativeQuery("SELECT * FROM Cars WHERE ownerName = '"+ownerName+"'").getSingleResult();
 
     }
 
@@ -79,8 +109,7 @@ public class UserService implements UserServiceInt{
         EntityManager em = emf.createEntityManager();
 
 
-
-        return null;
+          return (Car) em.createNativeQuery("SELECT * FROM Cars WHERE licensePlate = '"+licensePlate+"'").getSingleResult();
 
     }
 
@@ -91,6 +120,7 @@ public class UserService implements UserServiceInt{
 
         List<Owner> allOwners = em.createNativeQuery("SELECT * FROM Owners").getResultList();
 
+
         return allOwners;
     }
 
@@ -100,6 +130,8 @@ public class UserService implements UserServiceInt{
         EntityManager em = emf.createEntityManager();
 
         List<Car> allCars = em.createNativeQuery("SELECT * FROM Cars").getResultList();
+
+
 
         return allCars;
     }
@@ -112,6 +144,7 @@ public class UserService implements UserServiceInt{
         em.createNativeQuery("SELECT COUNT(*) FROM Owner;").getResultList();
 
         em.close();
+        emf.close();
 
     }
 
@@ -122,14 +155,9 @@ public class UserService implements UserServiceInt{
         em.createNativeQuery("SELECT COUNT(*) FROM InShop ;").getResultList();
 
         em.close();
-
+        emf.close();
 
     }
 
-
-
-
-
-
-
 }
+
