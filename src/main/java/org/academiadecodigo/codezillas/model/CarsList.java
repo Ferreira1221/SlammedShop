@@ -1,10 +1,23 @@
 package org.academiadecodigo.codezillas.model;
 
-public class CarsList {
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+@Entity
+public class CarsList {
+    private Integer ownerId;
     private String carBrand;
     private String carModel;
     private String carLicensePlate;
+
+    @Id
+    public Integer getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(Integer ownerId) {
+        this.ownerId = ownerId;
+    }
 
     public String getCarBrand() {
         return carBrand;

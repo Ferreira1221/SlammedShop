@@ -2,6 +2,7 @@ package org.academiadecodigo.codezillas.services;
 
 import org.academiadecodigo.codezillas.model.Account;
 
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 
 public class AccountService implements AccountServiceInt {
@@ -13,6 +14,20 @@ public class AccountService implements AccountServiceInt {
 
 
         return false;
+    }
+
+    @Override
+    public void addUser(String username, String password) {
+
+        EntityManager em = emf.createEntityManager();
+
+        em.createNativeQuery("INSERT INTO ClientInfo(username)").setParameter(username, username);
+
+        em.createNativeQuery("INSERT INTO ClientInfo(password)").setParameter(password, password);
+
+        em.close();
+
+
     }
 
     @Override

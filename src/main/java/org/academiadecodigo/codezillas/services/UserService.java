@@ -15,7 +15,7 @@ public class UserService implements UserServiceInt {
 
     private EntityManagerFactory emf;
 
-    public UserService (){
+    public UserService() {
     }
 
     public void setEmf(EntityManagerFactory emf) {
@@ -30,19 +30,17 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Owner").setParameter(owner.getId(), owner);
 
         em.close();
-        emf.close();
 
     }
 
     @Override
-    public void addCar(Car car) {
+    public void addCar(String ownerName, Car car) {
 
         EntityManager em = emf.createEntityManager();
 
-        em.createNativeQuery("INSERT INTO Car").setParameter(car.getLicensePlate(),car);
+        em.createNativeQuery("INSERT INTO CarsList").setParameter(car.getLicensePlate(), car);
 
         em.close();
-        emf.close();
 
     }
 
@@ -54,9 +52,10 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSER INTO Tires").setParameter(tire.getId(), tire);
 
         em.close();
-        emf.close();
 
     }
+
+
 
     @Override
     public void addSuspension(Suspension suspension) {
@@ -66,7 +65,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Suspension").setParameter(suspension.getId(), suspension);
 
         em.close();
-        emf.close();
 
     }
 
@@ -78,7 +76,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Stage").setParameter(stage.getId(), stage);
 
         em.close();
-        emf.close();
 
     }
 
@@ -90,7 +87,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Electronics").setParameter(electronics.getId(), electronics);
 
         em.close();
-        emf.close();
 
     }
 
@@ -99,7 +95,7 @@ public class UserService implements UserServiceInt {
 
         EntityManager em = emf.createEntityManager();
 
-        return (Owner) em.createNativeQuery("SELECT * FROM Cars WHERE ownerName = '"+ownerName+"'").getSingleResult();
+        return (Owner) em.createNativeQuery("SELECT * FROM Cars WHERE ownerName = '" + ownerName + "'").getSingleResult();
 
     }
 
@@ -109,7 +105,7 @@ public class UserService implements UserServiceInt {
         EntityManager em = emf.createEntityManager();
 
 
-          return (Car) em.createNativeQuery("SELECT * FROM Cars WHERE licensePlate = '"+licensePlate+"'").getSingleResult();
+        return (Car) em.createNativeQuery("SELECT * FROM Cars WHERE licensePlate = '" + licensePlate + "'").getSingleResult();
 
     }
 
@@ -125,12 +121,11 @@ public class UserService implements UserServiceInt {
     }
 
     @Override
-    public List findAllCars(){
+    public List findAllCars() {
 
         EntityManager em = emf.createEntityManager();
 
         List<Car> allCars = em.createNativeQuery("SELECT * FROM Cars").getResultList();
-
 
 
         return allCars;
@@ -144,18 +139,16 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("SELECT COUNT(*) FROM Owner;").getResultList();
 
         em.close();
-        emf.close();
 
     }
 
     @Override
-    public void countInShopCars(){
+    public void countInShopCars() {
         EntityManager em = emf.createEntityManager();
 
         em.createNativeQuery("SELECT COUNT(*) FROM InShop ;").getResultList();
 
         em.close();
-        emf.close();
 
     }
 

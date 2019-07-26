@@ -15,7 +15,7 @@ public interface UserServiceInt {
 
     void addOwner(Owner owner);
 
-    void addCar(Car car);
+    void addCar(String ownerName, Car car);
 
     void addTire(Tires tire);
 
@@ -36,6 +36,10 @@ public interface UserServiceInt {
     void countOwners();
 
     void countInShopCars();
+
+
+
+
 
 
 }
