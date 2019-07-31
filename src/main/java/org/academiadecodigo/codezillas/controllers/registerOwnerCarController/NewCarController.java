@@ -2,8 +2,8 @@ package org.academiadecodigo.codezillas.controllers.registerOwnerCarController;
 
 import org.academiadecodigo.codezillas.controllers.AbstractController;
 import org.academiadecodigo.codezillas.controllers.Controller;
-import org.academiadecodigo.codezillas.model.Car;
-import org.academiadecodigo.codezillas.model.Owner;
+import org.academiadecodigo.codezillas.persistence.model.Car;
+import org.academiadecodigo.codezillas.persistence.model.Owner;
 import org.academiadecodigo.codezillas.services.UserService;
 import org.academiadecodigo.codezillas.utils.Messages;
 

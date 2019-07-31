@@ -1,4 +1,4 @@
-package org.academiadecodigo.codezillas.model;
+package org.academiadecodigo.codezillas.persistence.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;

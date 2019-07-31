@@ -1,17 +1,19 @@
-package org.academiadecodigo.codezillas.model.components;
+package org.academiadecodigo.codezillas.persistence.model.components;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
-public class Tires {
+public class Suspension {
 
     private Integer id;
     private String brand;
     private String type;
 
-    public Tires() {
+
+    public Suspension() {
     }
+
     @Id
     public Integer getId() {
         return id;

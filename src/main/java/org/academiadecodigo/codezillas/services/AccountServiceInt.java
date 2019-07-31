@@ -1,6 +1,6 @@
 package org.academiadecodigo.codezillas.services;
 
-import org.academiadecodigo.codezillas.model.Account;
+import org.academiadecodigo.codezillas.persistence.model.Account;
 
 public interface AccountServiceInt {
 

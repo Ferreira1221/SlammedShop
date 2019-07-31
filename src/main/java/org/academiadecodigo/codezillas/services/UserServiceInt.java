@@ -1,11 +1,11 @@
 package org.academiadecodigo.codezillas.services;
 
-import org.academiadecodigo.codezillas.model.Car;
-import org.academiadecodigo.codezillas.model.Owner;
-import org.academiadecodigo.codezillas.model.components.Electronics;
-import org.academiadecodigo.codezillas.model.components.Stage;
-import org.academiadecodigo.codezillas.model.components.Suspension;
-import org.academiadecodigo.codezillas.model.components.Tires;
+import org.academiadecodigo.codezillas.persistence.model.Car;
+import org.academiadecodigo.codezillas.persistence.model.Owner;
+import org.academiadecodigo.codezillas.persistence.model.components.Electronics;
+import org.academiadecodigo.codezillas.persistence.model.components.Stage;
+import org.academiadecodigo.codezillas.persistence.model.components.Suspension;
+import org.academiadecodigo.codezillas.persistence.model.components.Tires;
 
 import java.util.List;
 
