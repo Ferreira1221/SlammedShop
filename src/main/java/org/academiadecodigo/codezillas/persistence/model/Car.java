@@ -2,19 +2,25 @@ package org.academiadecodigo.codezillas.persistence.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "car")
 public class Car {
 
+    @Id
     private String licensePlate;
     private String brand;
     private String model;
     private Integer horsePower;
 
-    public Car() {
-    }
+    @ManyToOne
+    private Owner owner;
 
-    @Id
+    @ManyToOne
+    private InShop inShop;
+
     public String getLicensePlate() {
         return licensePlate;
     }
@@ -45,5 +51,21 @@ public class Car {
 
     public void setHorsePower(Integer horsePower) {
         this.horsePower = horsePower;
+    }
+
+    public Owner getOwner() {
+        return owner;
+    }
+
+    public void setOwner(Owner owner) {
+        this.owner = owner;
+    }
+
+    public InShop getInShop() {
+        return inShop;
+    }
+
+    public void setInShop(InShop inShop) {
+        this.inShop = inShop;
     }
 }

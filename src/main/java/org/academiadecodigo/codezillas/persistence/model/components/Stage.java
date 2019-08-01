@@ -2,17 +2,16 @@ package org.academiadecodigo.codezillas.persistence.model.components;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "stage")
 public class Stage {
 
+    @Id
     private Integer id;
     private String stage_Type;
 
-    public Stage() {
-    }
-
-    @Id
     public Integer getId() {
         return id;
     }

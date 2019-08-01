@@ -2,17 +2,17 @@ package org.academiadecodigo.codezillas.persistence.model.components;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "tires")
 public class Tires {
 
+    @Id
     private Integer id;
     private String brand;
     private String type;
 
-    public Tires() {
-    }
-    @Id
     public Integer getId() {
         return id;
     }

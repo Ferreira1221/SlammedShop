@@ -2,14 +2,16 @@ package org.academiadecodigo.codezillas.persistence.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "clientinfo")
 public class ClientInfo {
 
+    @Id
     private String username;
     private String password;
 
-    @Id
     public String getUsername() {
         return username;
     }

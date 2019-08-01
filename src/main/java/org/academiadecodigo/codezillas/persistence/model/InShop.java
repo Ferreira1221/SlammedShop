@@ -2,26 +2,43 @@ package org.academiadecodigo.codezillas.persistence.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "inshopcars")
 public class InShop {
 
-    private String car;
-    private String owner;
+    @OneToMany
+    private List<Car> car = new ArrayList<>();
 
     @Id
 
-    public String getCar() {
+    private Integer carid;
+    private String owner;
+
+    public Integer getCarid() {
+        return carid;
+    }
+
+    public void setCarid(Integer carid) {
+        this.carid = carid;
+    }
+
+    public List<Car> getCar() {
         return car;
+    }
+
+    public void setCar(List<Car> car) {
+        this.car = car;
     }
 
     public String getOwner() {
         return owner;
     }
 
-    public void setCar(String car) {
-        this.car = car;
-    }
 
     public void setOwner(String owner) {
         this.owner = owner;

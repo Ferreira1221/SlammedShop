@@ -2,19 +2,17 @@ package org.academiadecodigo.codezillas.persistence.model.components;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "suspension")
 public class Suspension {
 
+    @Id
     private Integer id;
     private String brand;
     private String type;
 
-
-    public Suspension() {
-    }
-
-    @Id
     public Integer getId() {
         return id;
     }

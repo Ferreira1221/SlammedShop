@@ -2,15 +2,18 @@ package org.academiadecodigo.codezillas.persistence.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "carlist")
 public class CarsList {
+
+    @Id
     private Integer ownerId;
     private String carBrand;
     private String carModel;
     private String carLicensePlate;
 
-    @Id
     public Integer getOwnerId() {
         return ownerId;
     }
