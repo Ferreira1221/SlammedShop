@@ -1,11 +1,34 @@
 package org.academiadecodigo.codezillas.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
+
 @Entity
+@Table(name = "owner")
 public class Owner {
+
+    @OneToMany(
+            cascade = {CascadeType.ALL},
+
+            orphanRemoval = true,
+
+            mappedBy = "owner",
+
+            fetch = FetchType.EAGER
+    )
+    private List<Account> account = new ArrayList<>();
+
+    @OneToMany(
+            cascade = {CascadeType.ALL},
+
+            orphanRemoval = true,
+
+            mappedBy = "owner",
+
+            fetch = FetchType.EAGER
+    )
+    private List<Car> car = new ArrayList<>();
 
 
     @Id
@@ -14,7 +37,6 @@ public class Owner {
     private String email;
     private String phone;
     private String registerDate;
-
 
 
     public Integer getId() {
@@ -51,6 +73,22 @@ public class Owner {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
+    public List<Car> getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     public void setRegisterDate(String registerDate) {

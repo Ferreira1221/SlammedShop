@@ -2,9 +2,16 @@ package org.academiadecodigo.codezillas.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "account")
+
 public class Account {
+
+    @ManyToOne
+    private Owner owner;
 
     @Id
     private Integer id;

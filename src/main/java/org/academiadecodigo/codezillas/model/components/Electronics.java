@@ -2,9 +2,13 @@ package org.academiadecodigo.codezillas.model.components;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "electronics")
 public class Electronics {
+
+
 
     @Id
     private Integer id;

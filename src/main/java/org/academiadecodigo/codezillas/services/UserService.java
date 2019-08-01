@@ -30,7 +30,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Owner").setParameter(owner.getId(), owner);
 
         em.close();
-
     }
 
     @Override
@@ -43,7 +42,6 @@ public class UserService implements UserServiceInt {
         //TODO: refactor query, ,missing parameter
 
         em.close();
-
     }
 
     @Override
@@ -54,7 +52,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSER INTO Tires").setParameter(tire.getId(), tire);
 
         em.close();
-
     }
 
 
@@ -66,7 +63,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Suspension").setParameter(suspension.getId(), suspension);
 
         em.close();
-
     }
 
     @Override
@@ -77,7 +73,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Stage").setParameter(stage.getId(), stage);
 
         em.close();
-
     }
 
     @Override
@@ -88,7 +83,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("INSERT INTO Electronics").setParameter(electronics.getId(), electronics);
 
         em.close();
-
     }
 
     @Override
@@ -97,7 +91,6 @@ public class UserService implements UserServiceInt {
         EntityManager em = emf.createEntityManager();
 
         return (Owner) em.createNativeQuery("SELECT * FROM Cars WHERE ownerName = '" + ownerName + "'").getSingleResult();
-
     }
 
     @Override
@@ -107,7 +100,6 @@ public class UserService implements UserServiceInt {
 
 
         return (Car) em.createNativeQuery("SELECT * FROM Cars WHERE licensePlate = '" + licensePlate + "'").getSingleResult();
-
     }
 
     @Override
@@ -140,7 +132,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("SELECT COUNT(*) FROM Owner;").getResultList();
 
         em.close();
-
     }
 
     @Override
@@ -150,7 +141,6 @@ public class UserService implements UserServiceInt {
         em.createNativeQuery("SELECT COUNT(*) FROM InShop ;").getResultList();
 
         em.close();
-
     }
 
 }
