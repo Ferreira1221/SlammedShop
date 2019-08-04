@@ -2,7 +2,7 @@ package org.academiadecodigo.codezillas.controllers.registerOwnerCarController;
 
 import org.academiadecodigo.codezillas.controllers.AbstractController;
 import org.academiadecodigo.codezillas.controllers.Controller;
-import org.academiadecodigo.codezillas.persistence.model.Owner;
+import org.academiadecodigo.codezillas.persistence.model.Client;
 import org.academiadecodigo.codezillas.services.UserService;
 
 public class NewOwnerController extends AbstractController {
@@ -24,8 +24,8 @@ public class NewOwnerController extends AbstractController {
         this.userService = userService;
     }
 
-    private Owner createOwnerFile(String name, String email, String phone, String registerDate) {
-        Owner owner = new Owner();
+    private Client createOwnerFile(String name, String email, String phone, String registerDate) {
+        Client owner = new Client();
         owner.setId(ownerId);
         owner.setName(name);
         owner.setEmail(email);

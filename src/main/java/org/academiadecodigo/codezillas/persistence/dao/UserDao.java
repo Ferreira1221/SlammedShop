@@ -1,11 +1,7 @@
 package org.academiadecodigo.codezillas.persistence.dao;
 
-import org.h2.engine.User;
+import org.academiadecodigo.codezillas.persistence.model.Client;
 
-import java.util.List;
-
-public interface UserDao extends Dao<User> {
-
-    List<Integer> getUserIds();
+public interface UserDao extends Dao<Client> {
 
 }

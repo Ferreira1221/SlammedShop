@@ -1,12 +1,12 @@
-package org.academiadecodigo.codezillas.model;
+package org.academiadecodigo.codezillas.persistence.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "owner")
-public class Owner {
+@Table(name = "client")
+public class Client {
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -75,6 +75,7 @@ public class Owner {
         this.phone = phone;
     }
 
+    /*
     public Account getAccount() {
         return account;
     }
@@ -90,6 +91,7 @@ public class Owner {
     public void setCar(Car car) {
         this.car = car;
     }
+    */
 
     public void setRegisterDate(String registerDate) {
         this.registerDate = registerDate;

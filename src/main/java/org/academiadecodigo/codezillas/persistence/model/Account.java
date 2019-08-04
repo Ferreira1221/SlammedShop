@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class Account {
 
     @ManyToOne
-    private Owner owner;
+    private Client owner;
 
     @Id
     private Integer id;

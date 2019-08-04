@@ -16,7 +16,7 @@ public class Car {
     private Integer horsePower;
 
     @ManyToOne
-    private Owner owner;
+    private Client owner;
 
     @ManyToOne
     private InShop inShop;
@@ -53,11 +53,11 @@ public class Car {
         this.horsePower = horsePower;
     }
 
-    public Owner getOwner() {
+    public Client getOwner() {
         return owner;
     }
 
-    public void setOwner(Owner owner) {
+    public void setOwner(Client owner) {
         this.owner = owner;
     }
 

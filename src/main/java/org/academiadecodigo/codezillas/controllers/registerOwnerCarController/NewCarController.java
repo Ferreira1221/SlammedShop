@@ -3,7 +3,7 @@ package org.academiadecodigo.codezillas.controllers.registerOwnerCarController;
 import org.academiadecodigo.codezillas.controllers.AbstractController;
 import org.academiadecodigo.codezillas.controllers.Controller;
 import org.academiadecodigo.codezillas.persistence.model.Car;
-import org.academiadecodigo.codezillas.persistence.model.Owner;
+import org.academiadecodigo.codezillas.persistence.model.Client;
 import org.academiadecodigo.codezillas.services.UserService;
 import org.academiadecodigo.codezillas.utils.Messages;
 
@@ -16,12 +16,12 @@ public class NewCarController extends AbstractController {
     private String[] registeredOwners;
 
     public String[] registeredOwners() {
-        List<Owner> ownerList = userService.findAllOwners();
+        List<Client> ownerList = userService.findAllOwners();
 
         registeredOwners = new String[ownerList.size()];
         int index = 0;
 
-        for (Owner owner : ownerList) {
+        for (Client owner : ownerList) {
             registeredOwners[index] = owner.getName();
             index++;
         }
@@ -32,7 +32,7 @@ public class NewCarController extends AbstractController {
     public void addCarToOwner(int selectedOwner, String licensePlate, String brand, String model, Integer hp) {
         String ownerName = registeredOwners[selectedOwner - 1];
 
-        Owner owner = userService.findByName(ownerName);
+        Client owner = userService.findByName(ownerName);
 
         Integer ownerId = owner.getId();
 
