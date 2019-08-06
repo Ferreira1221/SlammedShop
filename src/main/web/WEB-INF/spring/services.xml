@@ -16,7 +16,7 @@
         <property name="accountDao" ref="accountDao"/>
     </bean>
 
-    <!--<bean id="accountFactory" class="org.academiadecodigo.javabank.factories.AccountFactory"/>
+    <!--<bean id="accountFactory" class="org.academiadecodigo.javabank.factories.UserFactory"/>
     -->
 
 </beans>

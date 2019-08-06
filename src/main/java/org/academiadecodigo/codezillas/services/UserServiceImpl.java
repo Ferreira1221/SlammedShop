@@ -1,7 +1,6 @@
 package org.academiadecodigo.codezillas.services;
 
 import org.academiadecodigo.codezillas.persistence.dao.UserDao;
-import org.academiadecodigo.codezillas.persistence.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

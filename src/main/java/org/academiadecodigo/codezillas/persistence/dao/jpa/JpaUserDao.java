@@ -1,6 +1,5 @@
 package org.academiadecodigo.codezillas.persistence.dao.jpa;
 
-import org.academiadecodigo.codezillas.persistence.model.User;
 import org.academiadecodigo.codezillas.persistence.dao.UserDao;
 import org.springframework.stereotype.Repository;
 

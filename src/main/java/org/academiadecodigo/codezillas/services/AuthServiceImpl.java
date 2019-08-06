@@ -1,6 +1,5 @@
 package org.academiadecodigo.codezillas.services;
 
-import org.academiadecodigo.codezillas.persistence.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
