@@ -8,12 +8,9 @@ import java.util.List;
 @Table(name = "client")
 public class Client extends AbstractModel {
 
-
-
     private String name;
     private String email;
     private String phone;
-    private String registerDate;
 
 
     @OneToMany(
@@ -25,10 +22,9 @@ public class Client extends AbstractModel {
 
             fetch = FetchType.EAGER
     )
-    private List<Car> car = new ArrayList<>();
+    private List<Car> carList = new ArrayList<>();
 
-    @ManyToOne
-    private ClientInfo clientInfo;
+
 
     public String getName() {
         return name;
@@ -42,9 +38,6 @@ public class Client extends AbstractModel {
         return phone;
     }
 
-    public String getRegisterDate() {
-        return registerDate;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -58,11 +51,7 @@ public class Client extends AbstractModel {
         this.phone = phone;
     }
 
-    public List<Car> getCar() {
-        return car;
-    }
-
-    public void setRegisterDate(String registerDate) {
-        this.registerDate = registerDate;
+    public List<Car> getCarList() {
+        return carList;
     }
 }

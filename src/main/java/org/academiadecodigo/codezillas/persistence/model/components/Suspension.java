@@ -32,4 +32,12 @@ public class Suspension extends AbstractModel {
     public void setType(String type) {
         this.type = type;
     }
+
+    public ComponentsList getComponentsList() {
+        return componentsList;
+    }
+
+    public void setComponentsList(ComponentsList componentsList) {
+        this.componentsList = componentsList;
+    }
 }

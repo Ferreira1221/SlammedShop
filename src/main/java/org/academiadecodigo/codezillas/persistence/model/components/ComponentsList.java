@@ -1,15 +1,19 @@
 package org.academiadecodigo.codezillas.persistence.model.components;
 
 import org.academiadecodigo.codezillas.persistence.model.AbstractModel;
+import org.academiadecodigo.codezillas.persistence.model.Car;
 
 import javax.persistence.CascadeType;
 import javax.persistence.FetchType;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import java.util.ArrayList;
 import java.util.List;
 
 public class ComponentsList extends AbstractModel {
 
+    @OneToOne
+    private Car car;
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -87,4 +91,13 @@ public class ComponentsList extends AbstractModel {
     public void setElectronics(List<Electronics> electronics) {
         this.electronics = electronics;
     }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
+    }
+
 }

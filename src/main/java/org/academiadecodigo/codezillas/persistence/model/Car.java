@@ -1,15 +1,16 @@
 package org.academiadecodigo.codezillas.persistence.model;
 
+import org.academiadecodigo.codezillas.persistence.model.components.ComponentsList;
+
 import javax.persistence.Entity;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "car")
-public class Car {
+public class Car extends AbstractModel {
 
-    @Id
     private String licensePlate;
     private String brand;
     private String model;
@@ -18,11 +19,8 @@ public class Car {
     @ManyToOne
     private Client client;
 
-    @ManyToOne
-    private InShop inShop;
-
-    @ManyToOne
-    private CarsList carsList;
+    @OneToOne
+    private ComponentsList componentsList;
 
     public String getLicensePlate() {
         return licensePlate;
@@ -64,11 +62,24 @@ public class Car {
         this.client = client;
     }
 
-    public InShop getInShop() {
-        return inShop;
+    public ComponentsList getComponentsList() {
+        return componentsList;
     }
 
-    public void setInShop(InShop inShop) {
-        this.inShop = inShop;
+    public void setComponentsList(ComponentsList componentsList) {
+        this.componentsList = componentsList;
     }
+
+    enum CarStatus {
+
+        WAITING,
+        IN_PROGREES,
+        READY,
+        DELIVERED;
+
+        CarStatus() {
+        }
+    }
+
 }
+
