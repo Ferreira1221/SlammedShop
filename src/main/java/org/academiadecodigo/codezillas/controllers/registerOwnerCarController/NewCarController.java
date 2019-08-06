@@ -4,7 +4,7 @@ import org.academiadecodigo.codezillas.controllers.AbstractController;
 import org.academiadecodigo.codezillas.controllers.Controller;
 import org.academiadecodigo.codezillas.persistence.model.Car;
 import org.academiadecodigo.codezillas.persistence.model.Client;
-import org.academiadecodigo.codezillas.services.UserService;
+import org.academiadecodigo.codezillas.services.ClientServiceImpl;
 import org.academiadecodigo.codezillas.utils.Messages;
 
 import java.util.List;
@@ -12,7 +12,7 @@ import java.util.List;
 public class NewCarController extends AbstractController {
 
     private Controller mainController;
-    private UserService userService;
+    private ClientServiceImpl userService;
     private String[] registeredOwners;
 
     public String[] registeredOwners() {
@@ -43,7 +43,7 @@ public class NewCarController extends AbstractController {
         this.mainController = addCarController;
     }
 
-    public void setUserService(UserService userService) {
+    public void setUserService(ClientServiceImpl userService) {
         this.userService = userService;
     }
 

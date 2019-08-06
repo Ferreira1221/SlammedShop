@@ -8,11 +8,11 @@
     </bean>
     -->
 
-    <bean id="userService" class="org.academiadecodigo.codezillas.services.UserService">
+    <bean id="userService" class="org.academiadecodigo.codezillas.services.ClientServiceImpl">
         <property name="userDao" ref="userDao"/>
     </bean>
 
-    <bean id="accountService" class="org.academiadecodigo.codezillas.services.AccountService">
+    <bean id="accountService" class="org.academiadecodigo.codezillas.services.AuthServiceImpl">
         <property name="accountDao" ref="accountDao"/>
     </bean>
 

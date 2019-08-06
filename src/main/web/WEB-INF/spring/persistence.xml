@@ -7,11 +7,11 @@
     <import resource="persistence/persistence-dev.xml"/>
     <import resource="persistence/persistence-prod.xml"/>
 
-    <bean id="accountDao" class="org.academiadecodigo.codezillas.persistence.dao.jpa.JpaAccountDao">
+    <bean id="accountDao" class="org.academiadecodigo.codezillas.persistence.dao.jpa.JpaUserDao">
     </bean>
 
 
-    <bean id="userDao" class="org.academiadecodigo.codezillas.persistence.dao.jpa.JpaUserDao">
+    <bean id="userDao" class="org.academiadecodigo.codezillas.persistence.dao.jpa.JpaClientDao">
     </bean>
 
 </beans>

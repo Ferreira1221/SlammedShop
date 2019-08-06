@@ -17,7 +17,7 @@ public class Client {
 
             fetch = FetchType.EAGER
     )
-    private List<Account> account = new ArrayList<>();
+    private List<User> account = new ArrayList<>();
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -76,11 +76,11 @@ public class Client {
     }
 
     /*
-    public Account getAccount() {
+    public User getAccount() {
         return account;
     }
 
-    public void setAccount(Account account) {
+    public void setAccount(User account) {
         this.account = account;
     }
 

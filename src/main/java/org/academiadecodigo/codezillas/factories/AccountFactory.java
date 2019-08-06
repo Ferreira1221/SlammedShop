@@ -1,14 +1,14 @@
 package org.academiadecodigo.codezillas.factories;
 
-import org.academiadecodigo.codezillas.persistence.model.Account;
+import org.academiadecodigo.codezillas.persistence.model.User;
 
 public class AccountFactory {
 
     //TODO: implementh design pattern factory
 
-    public Account createAccount() {
+    public User createAccount() {
 
-        return new Account();
+        return new User();
     }
 
 }

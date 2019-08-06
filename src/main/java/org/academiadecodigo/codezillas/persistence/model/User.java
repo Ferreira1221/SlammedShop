@@ -8,7 +8,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "account")
 
-public class Account {
+public class User {
 
     @ManyToOne
     private Client owner;
@@ -47,7 +47,7 @@ public class Account {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Account user = (Account) o;
+        User user = (User) o;
 
         return username.equals(user.username);
     }
