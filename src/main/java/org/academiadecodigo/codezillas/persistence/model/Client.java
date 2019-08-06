@@ -6,42 +6,25 @@ import java.util.List;
 
 @Entity
 @Table(name = "client")
-public class Client {
+public class Client extends AbstractModel {
 
-    @OneToMany(
-            cascade = {CascadeType.ALL},
-
-            orphanRemoval = true,
-
-            mappedBy = "owner",
-
-            fetch = FetchType.EAGER
-    )
-    private List<User> account = new ArrayList<>();
-
-    @OneToMany(
-            cascade = {CascadeType.ALL},
-
-            orphanRemoval = true,
-
-            mappedBy = "owner",
-
-            fetch = FetchType.EAGER
-    )
-    private List<Car> car = new ArrayList<>();
-
-
-    @Id
-    private Integer id;
     private String name;
     private String email;
     private String phone;
-    private String registerDate;
 
 
-    public Integer getId() {
-        return id;
-    }
+    @OneToMany(
+            cascade = {CascadeType.ALL},
+
+            orphanRemoval = true,
+
+            mappedBy = "owner",
+
+            fetch = FetchType.EAGER
+    )
+    private List<Car> carList = new ArrayList<>();
+
+
 
     public String getName() {
         return name;
@@ -55,13 +38,6 @@ public class Client {
         return phone;
     }
 
-    public String getRegisterDate() {
-        return registerDate;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -75,25 +51,7 @@ public class Client {
         this.phone = phone;
     }
 
-    /*
-    public User getAccount() {
-        return account;
-    }
-
-    public void setAccount(User account) {
-        this.account = account;
-    }
-
-    public List<Car> getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
-    */
-
-    public void setRegisterDate(String registerDate) {
-        this.registerDate = registerDate;
+    public List<Car> getCarList() {
+        return carList;
     }
 }

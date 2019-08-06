@@ -1,5 +1,0 @@
-package org.academiadecodigo.codezillas.controllers;
-
-public interface Controller {
-    void init();
-}

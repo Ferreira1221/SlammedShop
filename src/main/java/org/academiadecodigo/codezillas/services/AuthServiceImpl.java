@@ -1,5 +1,6 @@
 package org.academiadecodigo.codezillas.services;
 
+import org.academiadecodigo.codezillas.persistence.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,7 +23,7 @@ public class AuthServiceImpl implements AuthService {
     @Override
     public void register(String username, String password) {
         User user = new User();
-        user.setUsername(username);
+        user.setUserName(username);
         user.setPassword(password);
 
         userService.addUser(user);

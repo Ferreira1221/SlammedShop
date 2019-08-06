@@ -1,6 +1,7 @@
 package org.academiadecodigo.codezillas.persistence.dao.jpa;
 
 import org.academiadecodigo.codezillas.persistence.dao.UserDao;
+import org.academiadecodigo.codezillas.persistence.model.User;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class JpaUserDao extends GenericJpaDao<User> implements UserDao {
         User user = null;
 
         for(User u : users) {
-            if (u.getUsername().equals(username) && u.getPassword().equals(password)) {
+            if (u.getUserName().equals(username) && u.getPassword().equals(password)) {
                 user = u;
             }
         }

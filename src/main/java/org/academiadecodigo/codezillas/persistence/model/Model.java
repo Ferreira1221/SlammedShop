@@ -2,6 +2,8 @@ package org.academiadecodigo.codezillas.persistence.model;
 
 public interface Model {
 
-    //TODO: implementh interface
+    Integer getId();
+
+    void setId(Integer id);
 
 }

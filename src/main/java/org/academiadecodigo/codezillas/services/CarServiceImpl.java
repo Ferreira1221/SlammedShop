@@ -3,6 +3,7 @@ package org.academiadecodigo.codezillas.services;
 import org.academiadecodigo.codezillas.persistence.dao.CarDao;
 import org.academiadecodigo.codezillas.persistence.model.Car;
 import org.academiadecodigo.codezillas.persistence.model.Client;
+import org.academiadecodigo.codezillas.persistence.model.components.ComponentsList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,7 +23,8 @@ public class CarServiceImpl implements CarService {
         car.setBrand(brand);
         car.setModel(model);
         car.setHorsePower(horsepower);
-        car.setOwner(client);
+        car.setClient(client);
+        car.setComponentsList(new ComponentsList());
 
         carDao.saveOrUpdate(car);
     }
@@ -45,7 +47,6 @@ public class CarServiceImpl implements CarService {
     @Override
     public void tuneElectronics(Integer id, String option) {
         Car car = carDao.findById(id);
-
     }
 
     @Override

@@ -1,30 +1,35 @@
 package org.academiadecodigo.codezillas.persistence.model.components;
 
+import org.academiadecodigo.codezillas.persistence.model.AbstractModel;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "stage")
-public class Stage {
+public class Stage extends AbstractModel {
 
-    @Id
-    private Integer id;
     private String stage_Type;
 
-    public Integer getId() {
-        return id;
-    }
+    @ManyToOne
+    private ComponentsList componentsList;
 
     public String getStage_Type() {
         return stage_Type;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public void setStage_Type(String stage_Type) {
         this.stage_Type = stage_Type;
+    }
+
+    public ComponentsList getComponentsList() {
+        return componentsList;
+    }
+
+    public void setComponentsList(ComponentsList componentsList) {
+        this.componentsList = componentsList;
     }
 }

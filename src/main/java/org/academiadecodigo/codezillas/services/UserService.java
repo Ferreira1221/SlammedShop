@@ -1,5 +1,7 @@
 package org.academiadecodigo.codezillas.services;
 
+import org.academiadecodigo.codezillas.persistence.model.User;
+
 import java.util.List;
 
 public interface UserService {
