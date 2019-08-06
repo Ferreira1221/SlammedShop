@@ -1,21 +1,21 @@
 package org.academiadecodigo.codezillas.persistence.model.components;
 
+import org.academiadecodigo.codezillas.persistence.model.AbstractModel;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "tires")
-public class Tires {
+public class Tires extends AbstractModel {
 
-    @Id
-    private Integer id;
     private String brand;
     private String type;
 
-    public Integer getId() {
-        return id;
-    }
+    @ManyToOne
+    private ComponentsList componentsList;
 
     public String getBrand() {
         return brand;
@@ -23,10 +23,6 @@ public class Tires {
 
     public String getType() {
         return type;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
     }
 
     public void setBrand(String brand) {

@@ -1,18 +1,26 @@
 package org.academiadecodigo.codezillas.persistence.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "carlist")
-public class CarsList {
+public class CarsList extends AbstractModel {
 
-    @Id
     private Integer ownerId;
     private String carBrand;
     private String carModel;
     private String carLicensePlate;
+
+    @OneToMany(
+
+            cascade = {CascadeType.ALL},
+
+            orphanRemoval = true,
+
+            mappedBy = "carList",
+
+            fetch = FetchType.EAGER
+    )
 
     public Integer getOwnerId() {
         return ownerId;

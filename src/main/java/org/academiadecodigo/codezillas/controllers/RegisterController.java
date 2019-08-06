@@ -1,6 +1,5 @@
 package org.academiadecodigo.codezillas.controllers;
 
-import org.academiadecodigo.codezillas.persistence.model.Account;
 import org.academiadecodigo.codezillas.services.AccountService;
 import org.academiadecodigo.codezillas.services.AccountServiceInt;
 

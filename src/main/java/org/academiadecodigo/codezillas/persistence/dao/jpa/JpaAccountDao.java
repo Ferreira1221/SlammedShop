@@ -1,6 +1,5 @@
 package org.academiadecodigo.codezillas.persistence.dao.jpa;
 
-import org.academiadecodigo.codezillas.persistence.model.Account;
 import org.academiadecodigo.codezillas.persistence.dao.AccountDao;
 
 public class JpaAccountDao extends GenericJpaDao<Account> implements AccountDao {

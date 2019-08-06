@@ -16,10 +16,13 @@ public class Car {
     private Integer horsePower;
 
     @ManyToOne
-    private Client owner;
+    private Client client;
 
     @ManyToOne
     private InShop inShop;
+
+    @ManyToOne
+    private CarsList carsList;
 
     public String getLicensePlate() {
         return licensePlate;
@@ -53,12 +56,12 @@ public class Car {
         this.horsePower = horsePower;
     }
 
-    public Client getOwner() {
-        return owner;
+    public Client getClient() {
+        return client;
     }
 
-    public void setOwner(Client owner) {
-        this.owner = owner;
+    public void setClient(Client client) {
+        this.client = client;
     }
 
     public InShop getInShop() {

@@ -6,18 +6,15 @@ import java.util.List;
 
 @Entity
 @Table(name = "client")
-public class Client {
+public class Client extends AbstractModel {
 
-    @OneToMany(
-            cascade = {CascadeType.ALL},
 
-            orphanRemoval = true,
 
-            mappedBy = "owner",
+    private String name;
+    private String email;
+    private String phone;
+    private String registerDate;
 
-            fetch = FetchType.EAGER
-    )
-    private List<Account> account = new ArrayList<>();
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -30,18 +27,8 @@ public class Client {
     )
     private List<Car> car = new ArrayList<>();
 
-
-    @Id
-    private Integer id;
-    private String name;
-    private String email;
-    private String phone;
-    private String registerDate;
-
-
-    public Integer getId() {
-        return id;
-    }
+    @ManyToOne
+    private ClientInfo clientInfo;
 
     public String getName() {
         return name;
@@ -59,10 +46,6 @@ public class Client {
         return registerDate;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -75,23 +58,9 @@ public class Client {
         this.phone = phone;
     }
 
-    /*
-    public Account getAccount() {
-        return account;
-    }
-
-    public void setAccount(Account account) {
-        this.account = account;
-    }
-
     public List<Car> getCar() {
         return car;
     }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
-    */
 
     public void setRegisterDate(String registerDate) {
         this.registerDate = registerDate;
