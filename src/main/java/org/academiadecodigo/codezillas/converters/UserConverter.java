@@ -18,7 +18,8 @@ public class UserConverter {
 
     public User convertUserDtoToUser(UserDto userDto) {
 
-        User user = new User();
+        User user = (userDto.getId()) != null ? userService.getUserById(userDto.getId()) : new User();
+
         user.setUserName(userDto.getUserName());
         user.setPassword(userDto.getPassword());
 

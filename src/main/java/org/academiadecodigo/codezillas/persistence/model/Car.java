@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import java.util.Date;
 
 @Entity
 @Table(name = "car")
@@ -15,6 +16,7 @@ public class Car extends AbstractModel {
     private String brand;
     private String model;
     private Integer horsePower;
+    private Date carDate;
 
     @ManyToOne
     private Client client;
@@ -68,6 +70,14 @@ public class Car extends AbstractModel {
 
     public void setComponentsList(ComponentsList componentsList) {
         this.componentsList = componentsList;
+    }
+
+    public Date getCarDate() {
+        return carDate;
+    }
+
+    public void setCarDate(Date carDate) {
+        this.carDate = carDate;
     }
 
     enum CarStatus {

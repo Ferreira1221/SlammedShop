@@ -16,8 +16,9 @@ public class ClientConverter {
         this.clientService = clientService;
     }
 
-    public Client convertClientDtoToClient(ClientDto clientDto){
-        Client client = new Client();
+    public Client convertClientDtoToClient(ClientDto clientDto) {
+
+        Client client = (clientDto.getId()) != null ? clientService.getClientById(clientDto.getId()) : new Client();
 
         client.setName(clientDto.getName());
         client.setEmail(clientDto.getEmail());
@@ -26,7 +27,7 @@ public class ClientConverter {
         return client;
     }
 
-    public ClientDto convertClientToClientDto (Client client){
+    public ClientDto convertClientToClientDto(Client client) {
 
         ClientDto clientDto = new ClientDto();
 
