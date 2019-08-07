@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="header :: header" />
+</head>
+<body>
+<div class="container">
+
+    <div th:replace="action :: action"></div>
+
+    <h2>Customer List</h2>
+
+    <div>
+        <img src="WEB-INF/templates/resources/homepagepic.png" class="rounded mx-auto d-block" alt="">
+
+    </div>
+
+    <div class="col-sm-3">
+        <a class="btn btn-primary" th:href="@{/homepage}">Login</a>
+        <a class="btn btn-primary" th:href="@{/homepage}">Register</a>
+    </div>
+</div>
+</body>
+</html>
