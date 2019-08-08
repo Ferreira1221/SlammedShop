@@ -14,8 +14,10 @@ public class Tires extends AbstractModel {
     private String brand;
     private String type;
 
+    /*
     @ManyToOne
     private ComponentsList componentsList;
+    */
 
     public String getBrand() {
         return brand;
@@ -33,6 +35,7 @@ public class Tires extends AbstractModel {
         this.type = type;
     }
 
+    /*
     public ComponentsList getComponentsList() {
         return componentsList;
     }
@@ -40,4 +43,5 @@ public class Tires extends AbstractModel {
     public void setComponentsList(ComponentsList componentsList) {
         this.componentsList = componentsList;
     }
+    */
 }

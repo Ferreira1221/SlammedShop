@@ -13,8 +13,10 @@ public class Stage extends AbstractModel {
 
     private String stage_Type;
 
+    /*
     @ManyToOne
     private ComponentsList componentsList;
+    */
 
     public String getStage_Type() {
         return stage_Type;
@@ -25,6 +27,7 @@ public class Stage extends AbstractModel {
         this.stage_Type = stage_Type;
     }
 
+    /*
     public ComponentsList getComponentsList() {
         return componentsList;
     }
@@ -32,4 +35,5 @@ public class Stage extends AbstractModel {
     public void setComponentsList(ComponentsList componentsList) {
         this.componentsList = componentsList;
     }
+    */
 }

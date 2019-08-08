@@ -1,9 +1,11 @@
 package org.academiadecodigo.codezillas.persistence.model.components;
 
 import org.academiadecodigo.codezillas.persistence.model.AbstractModel;
+import org.academiadecodigo.codezillas.persistence.model.Car;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -13,8 +15,10 @@ public class Electronics extends AbstractModel {
 
     private String elecsDescription;
 
+    /*
     @ManyToOne
     private ComponentsList componentsList;
+    */
 
     public String getElecsDescription() {
         return elecsDescription;
@@ -24,6 +28,7 @@ public class Electronics extends AbstractModel {
         this.elecsDescription = elecsDescription;
     }
 
+    /*
     public ComponentsList getComponentsList() {
         return componentsList;
     }
@@ -31,6 +36,7 @@ public class Electronics extends AbstractModel {
     public void setComponentsList(ComponentsList componentsList) {
         this.componentsList = componentsList;
     }
+    */
 
 
 }

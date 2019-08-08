@@ -23,8 +23,6 @@ public class CarServiceImpl implements CarService {
         car.setBrand(brand);
         car.setModel(model);
         car.setHorsePower(horsepower);
-        car.setClient(client);
-        car.setComponentsList(new ComponentsList());
 
         carDao.saveOrUpdate(car);
     }

@@ -30,6 +30,5 @@ org/academiadecodigo/codezillas/persistence/dao/UserDao.class
 org/academiadecodigo/codezillas/services/CarService.class
 org/academiadecodigo/codezillas/utils/Messages.class
 org/academiadecodigo/codezillas/persistence/dao/jpa/JpaCarDao.class
-org/academiadecodigo/codezillas/persistence/model/ComponentsList.class
 org/academiadecodigo/codezillas/persistence/model/components/Stage.class
 org/academiadecodigo/codezillas/persistence/dao/CarDao.class

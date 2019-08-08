@@ -12,9 +12,7 @@ import java.util.List;
 
 public class ComponentsList extends AbstractModel {
 
-    @OneToOne
-    private Car car;
-
+    /*
     @OneToMany(
             cascade = {CascadeType.ALL},
 
@@ -25,6 +23,7 @@ public class ComponentsList extends AbstractModel {
             fetch = FetchType.EAGER
     )
     private List<Tires> tires = new ArrayList<>();
+
 
     @OneToMany(
             cascade = {CascadeType.ALL},
@@ -68,6 +67,7 @@ public class ComponentsList extends AbstractModel {
         this.tires = tires;
     }
 
+
     public List<Suspension> getSuspension() {
         return suspension;
     }
@@ -91,13 +91,6 @@ public class ComponentsList extends AbstractModel {
     public void setElectronics(List<Electronics> electronics) {
         this.electronics = electronics;
     }
-
-    public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }
+    */
 
 }

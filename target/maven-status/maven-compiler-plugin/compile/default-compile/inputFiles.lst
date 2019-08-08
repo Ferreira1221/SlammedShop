@@ -7,7 +7,6 @@
 /Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/services/CarService.java
 /Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/services/ClientServiceImpl.java
 /Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/persistence/model/components/ComponentsList.java
-/Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/persistence/model/ComponentsList.java
 /Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/persistence/model/User.java
 /Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/persistence/dao/UserDao.java
 /Users/codecadet/repos/SlammedShop/src/main/java/org/academiadecodigo/codezillas/persistence/dao/jpa/GenericJpaDao.java

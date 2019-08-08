@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="header :: header" />
+</head>
+<body>
+<div class="container">
+
+    <div th:replace="action :: action"></div>
+
+    <h2>SlammedShop</h2>
+
+    <div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">First Name:</label>
+        </div>
+        <div class="col-sm-3">
+            <a class="btn btn-primary" th:href="@{/homepage}">Login</a>
+            <a class="btn btn-primary" th:href="@{/homepage}">Register</a>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

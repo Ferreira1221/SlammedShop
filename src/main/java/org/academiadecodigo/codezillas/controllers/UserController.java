@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/main")
+@RequestMapping("/user")
 public class UserController {
 
     private UserService userService;
@@ -17,8 +17,8 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
+    @RequestMapping(method = RequestMethod.GET, path = {"/homepage", "/", ""})
     public String homepage() {
-        return "main/homepage";
+        return "user/homepage";
     }
 }

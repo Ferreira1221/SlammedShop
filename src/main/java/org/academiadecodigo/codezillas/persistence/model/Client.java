@@ -13,6 +13,7 @@ public class Client extends AbstractModel {
     private String phone;
 
 
+    /*
     @OneToMany(
             cascade = {CascadeType.ALL},
 
@@ -23,6 +24,7 @@ public class Client extends AbstractModel {
             fetch = FetchType.EAGER
     )
     private List<Car> carList = new ArrayList<>();
+    */
 
 
 
@@ -51,7 +53,9 @@ public class Client extends AbstractModel {
         this.phone = phone;
     }
 
+    /*
     public List<Car> getCarList() {
         return carList;
     }
+    */
 }
