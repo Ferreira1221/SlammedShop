@@ -1,8 +1,9 @@
 package org.academiadecodigo.codezillas.controllers;
 
-import org.academiadecodigo.codezillas.services.UserService;
+import org.academiadecodigo.codezillas.services.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -10,15 +11,21 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping("/user")
 public class UserController {
 
-    private UserService userService;
+    private ClientService clientService;
 
     @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
+    public void setClientService(ClientService clientService) {
+        this.clientService = clientService;
     }
 
-    @RequestMapping(method = RequestMethod.GET, path = {"/homepage", "/", ""})
+    /*@RequestMapping(method = RequestMethod.GET, path = {"/homepage", "/", ""})
     public String homepage() {
-        return "user/homepage";
+        return "/WEB-INF/templates/user/list.html";
+    }*/
+
+    @RequestMapping(method = RequestMethod.GET, path = {"/list", "/", ""})
+    public String listClients(Model model) {
+        model.addAttribute("clients", clientService.clientsList()) ;
+        return "user/list";
     }
 }
